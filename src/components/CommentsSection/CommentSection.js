@@ -29,7 +29,9 @@ class CommentSection extends React.Component {
                              )
                     })}
                 </div>
-                
+                <div className="new-comment">
+                    <input type="text" placeholder="Comment"></input>
+                </div>
             </div>
         )
     }

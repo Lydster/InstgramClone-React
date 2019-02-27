@@ -1,18 +1,32 @@
 .insta-logo {
    text-align: left;
    margin: 20px;
+   border-left: 1px solid black;
+   padding: 0 10px;
+}
+
+.fab {
+    margin-top: 20px;
 }
 
 .Search-bar {
     width: 300px;
     height: 20px;
     text-align: center;
-    margin: 30px 200px;
+    margin: 30px;
 }
 
 .SearchBar {
     display: flex;
     justify-content: flex-start;
-    margin: 0 40px;
+    margin: 0 60px;
 }
 
+.navIcons {
+    margin: 20px;
+}
+
+.right-icons {
+    display: flex;
+    justify-content: flex-end;
+}

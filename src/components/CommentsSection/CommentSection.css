@@ -11,3 +11,8 @@
 .likes {
     text-align: left;
 }
+
+.comment {
+    display: flex;
+
+}
