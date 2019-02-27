@@ -1,7 +1,7 @@
 import React from 'react';
 import Comment from './Comment'
 import * as Icon from 'react-feather';
-
+import './CommentSection.css'
 
 class CommentSection extends React.Component {
     constructor(props) {
