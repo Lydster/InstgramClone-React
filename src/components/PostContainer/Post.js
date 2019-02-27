@@ -6,10 +6,10 @@ const Post = (props) => {
     return(
         <div>
             <div className='avatar'>
-                <img src={props.data.thumbnailUrl} />
+                <img src={props.data.thumbnailUrl} alt="avatar" />
                 <h4>{props.data.username}</h4>
             </div>
-                <img src={props.data.imageUrl} />
+                <img src={props.data.imageUrl} alt="photo relating to text"/>
                 <CommentSection data={props.data}/>
         </div>
     )

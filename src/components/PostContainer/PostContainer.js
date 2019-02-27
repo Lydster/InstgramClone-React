@@ -4,7 +4,7 @@ import './PostContainer.css'
 
 const PostContainer = (props) => {  
     return(
-        <div>
+        <div className="post-container">
             {props.data.map((post, idx) => {
             return <Post data={post} key={idx}/> })}
         </div>
