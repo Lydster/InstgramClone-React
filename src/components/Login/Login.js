@@ -11,7 +11,9 @@ const FormContainer = styled.div`
     padding: 20px;
 `;
 
-
+const H2style = styled.h2`
+    text-align: center
+`;
 
 class Login extends React.Component {
     constructor() {
@@ -24,13 +26,13 @@ class Login extends React.Component {
     render() {
         return(
             <FormContainer>
-                <h2>Login</h2>
+                <H2style>Welcome to InstaFunForeverReactFun</H2style>
                 <Form className="form">
                 <Col>
                     <FormGroup className='form-group' >
-                        <Label>User</Label>
+                        <Label>Username</Label>
                         <Input
-                            type="email"
+                            type="username"
                             name="username"
                             id="exampleUsername"
                             placeholder="cool-guy"

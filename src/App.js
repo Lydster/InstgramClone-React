@@ -6,7 +6,7 @@ import withConditionalRender from './components/withConditional/withConditional'
 
 
 
-const ToShow = withConditionalRender(PostsPage)(Login);
+const ToShow = withConditionalRender(Login)(PostsPage);
 
 
 
