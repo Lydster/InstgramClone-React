@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import dummyData from './dummyData'
-import SearchBar from './components/SearchBar/SearchBar'
-import PostContainer from './components/PostContainer/PostContainer'
+import PostsPage from './PostsPage'
+import Login from './components/Login/Login'
+import withConditionalRender from './components/withConditional/withConditional'
 
 
 
-
+const ToShow = withConditionalRender(PostsPage)(Login);
 
 
 
@@ -14,41 +14,23 @@ class App extends React.Component {
   constructor() {
     super();
   this.state = {
-      data: [],
-      searchData: []
+      inputText: ''
   }
 }
 
-componentDidMount() {
-  this.setState({
-    data: dummyData
-  })
+signIn = e => {
+  // sets a "user" item to localStorage for our HOC to check and
+  // render the correct component
+  e.preventDefault();
+  localStorage.setItem('user', this.state.inputText);
+  window.location.reload();
+};
+
+render() {
+  return(
+    <ToShow />
+  )
 }
 
-searchBarHandler = e => {
-  const posts = this.state.data.filter( post => {
-    if (post.username.includes(e.target.value)) {
-      console.log(post)
-      return post
-    }
-  });
-  this.setState({
-    searchData: posts
-  })
 }
-
-  render() {
-    console.log(this.state)
-    return (
-      <div className="App">
-        <SearchBar input="text" searchBarHandler={this.searchBarHandler} />
-        <PostContainer data={
-          this.state.searchData.length > 0 ? 
-          this.state.searchData :
-          this.state.data}/>
-      </div>
-    );
-  }
-}
-
 export default App;
