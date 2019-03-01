@@ -6,7 +6,7 @@ import withConditionalRender from './components/withConditional/withConditional'
 
 
 
-const ToShow = withConditionalRender(Login)(PostsPage);
+const ToShow = withConditionalRender(PostsPage)(Login);
 
 
 
@@ -18,13 +18,7 @@ class App extends React.Component {
   }
 }
 
-signIn = e => {
-  // sets a "user" item to localStorage for our HOC to check and
-  // render the correct component
-  e.preventDefault();
-  localStorage.setItem('user', this.state.inputText);
-  window.location.reload();
-};
+
 
 render() {
   return(

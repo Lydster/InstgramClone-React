@@ -30,6 +30,11 @@ class PostsPage extends React.Component {
       searchData: posts
     })
   }
+
+  logOut = e => {
+    localStorage.removeItem('user');
+    window.location.reload();
+  }
   
     render() {
       console.log(this.state)
@@ -40,6 +45,7 @@ class PostsPage extends React.Component {
             this.state.searchData.length > 0 ? 
             this.state.searchData :
             this.state.data}/>
+            <button onClick={this.logOut}>Log Out</button>
         </div>
       );
     }

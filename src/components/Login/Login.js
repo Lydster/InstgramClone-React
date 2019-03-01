@@ -23,11 +23,21 @@ class Login extends React.Component {
             password: ""
         }
     }
+
+    signIn = e => {
+        // sets a "user" item to localStorage for our HOC to check and
+        // render the correct component
+        e.preventDefault();
+        localStorage.setItem('user', this.state.inputText);
+        window.location.reload();
+      };
+
     render() {
         return(
-            <FormContainer>
+           
+            <FormContainer >
                 <H2style>Welcome to InstaFunForeverReactFun</H2style>
-                <Form className="form">
+                <Form className="form" onSubmit={this.signIn}>
                 <Col>
                     <FormGroup className='form-group' >
                         <Label>Username</Label>
@@ -50,7 +60,7 @@ class Login extends React.Component {
                         />
                     </FormGroup>
                 </Col>
-                <Button>Submit</Button>
+                <Button type="submit">Submit</Button>
                 </Form>
             </FormContainer>
         )
